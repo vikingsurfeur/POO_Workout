@@ -4,7 +4,7 @@ require_once './libraries/database.php';
 require_once './libraries/utils.php';
 require_once './libraries/Models/Article.php';
 
-$articleModel = new Article();
+$articleModel = new \Models\Article();
 
 /**
  * DANS CE FICHIER, ON CHERCHE A SUPPRIMER L'ARTICLE DONT L'ID EST PASSE EN GET
@@ -33,7 +33,7 @@ if (!$article) {
 /**
  * 4. Réelle suppression de l'article
  */
-$articleModel->deleteArticle($id);
+$articleModel->delete($id);
 
 /**
  * 5. Redirection vers la page d'accueil

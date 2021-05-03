@@ -1,8 +1,11 @@
 <?php
 
-require_once('libraries/Models/Model.php');
+namespace Models;
+require_once('./libraries/Models/Model.php');
 class Article extends Model
 {
+    protected $table = 'articles';
+
     public function getAllArticles(): array
     {
         // On utilisera ici la méthode query (pas besoin de préparation car aucune variable n'entre en jeu)
@@ -25,12 +28,5 @@ class Article extends Model
         $article = $query->fetch();
 
         return $article;
-    }
-
-    public function deleteArticle(int $id)
-    {
-        $query = $this->pdo->prepare('DELETE FROM articles WHERE id = :id');
-
-        $query->execute(['id' => $id]);
     }
 }

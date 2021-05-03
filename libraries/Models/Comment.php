@@ -1,8 +1,11 @@
 <?php
 
-require_once('libraries/database.php');
+namespace Models;
+require_once('./libraries/Models/Model.php');
 class Comment extends Model
 {
+    protected $table = 'comments';
+
     public function getAllComments(int $article_id): array
     {
         $query = $this->pdo->prepare("SELECT * FROM comments WHERE article_id = :article_id");
@@ -24,13 +27,6 @@ class Comment extends Model
         $comment = $query->fetch();
 
         return $comment;
-    }
-
-    public function deleteComment(int $id): void
-    {
-        $query = $this->pdo->prepare('DELETE FROM comments WHERE id = :id');
-
-        $query->execute(['id' => $id]);
     }
 
     public function saveComment(string $author, string $content, int $article_id): void

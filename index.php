@@ -6,7 +6,7 @@ require_once './libraries/Models/Article.php';
 require_once './libraries/Models/Comment.php';
 
 
-$model = new Article();
+$model = new \Models\Article();
 /**
  * CE FICHIER A POUR BUT D'AFFICHER LA PAGE D'ACCUEIL !
  * 

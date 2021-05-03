@@ -1,10 +1,10 @@
 <?php
 
-require_once './libraries/database.php';
-require_once './libraries/utils.php';
-require_once './libraries/Models/Comment.php';
+require_once ('./libraries/database.php');
+require_once ('./libraries/utils.php');
+require_once ('./libraries/Models/Comment.php');
 
-$commentModel = new Comment();
+$commentModel = new \Models\Comment();
 
 /**
  * DANS CE FICHIER ON CHERCHE A SUPPRIMER LE COMMENTAIRE DONT L'ID EST PASSE EN PARAMETRE GET !
@@ -35,7 +35,7 @@ if (!$commentaire === 0) {
  * On récupère l'identifiant de l'article avant de supprimer le commentaire
  */
 $article_id = $commentaire['article_id'];
-$commentModel->deleteComment($id);
+$commentModel->delete($id);
 
 /**
  * 5. Redirection vers l'article en question

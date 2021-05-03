@@ -5,8 +5,8 @@ require_once './libraries/utils.php';
 require_once './libraries/Models/Article.php';
 require_once './libraries/Models/Comment.php';
 
-$articleModel = new Article();
-$commentModel = new Comment();
+$articleModel = new \Models\Article();
+$commentModel = new \Models\Comment();
 
 /**
  * CE FICHIER DOIT AFFICHER UN ARTICLE ET SES COMMENTAIRES !
