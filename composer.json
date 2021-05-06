@@ -1,6 +1,9 @@
 {
     "require": {
         "fzaninotto/faker": "^1.8",
-      "ext-pdo": "*"
-    }
+      "ext-pdo": "*",
+      "ext-ctype": "*"
+    },
+  "name": "",
+  "description": ""
 }

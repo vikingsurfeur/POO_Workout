@@ -1,10 +1,12 @@
 <?php
 
+use Models\Article;
+
 require_once './libraries/database.php';
 require_once './libraries/utils.php';
 require_once './libraries/Models/Article.php';
 
-$articleModel = new \Models\Article();
+$articleModel = new Article();
 
 /**
  * DANS CE FICHIER, ON CHERCHE A SUPPRIMER L'ARTICLE DONT L'ID EST PASSE EN GET

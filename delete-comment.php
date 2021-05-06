@@ -1,10 +1,12 @@
 <?php
 
+use Models\Comment;
+
 require_once ('./libraries/database.php');
 require_once ('./libraries/utils.php');
 require_once ('./libraries/Models/Comment.php');
 
-$commentModel = new \Models\Comment();
+$commentModel = new Comment();
 
 /**
  * DANS CE FICHIER ON CHERCHE A SUPPRIMER LE COMMENTAIRE DONT L'ID EST PASSE EN PARAMETRE GET !
