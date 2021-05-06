@@ -16,17 +16,4 @@ class Article extends Model
 
         return $articles;
     }
-
-    public function getArticle(int $id): array
-    {
-        $query = $this->pdo->prepare("SELECT * FROM articles WHERE id = :article_id");
-        // On exécute la requête en précisant le paramètre :article_id
-
-        $query->execute(['article_id' => $id]);
-
-        // On fouille le résultat pour en extraire les données réelles de l'article
-        $article = $query->fetch();
-
-        return $article;
-    }
 }

@@ -18,17 +18,6 @@ class Comment extends Model
         return $commentaires;
     }
 
-    public function findComment(int $id)
-    {
-        $query = $this->pdo->prepare('SELECT * FROM comments WHERE id = :id');
-
-        $query->execute(['id' => $id]);
-
-        $comment = $query->fetch();
-
-        return $comment;
-    }
-
     public function saveComment(string $author, string $content, int $article_id): void
     {
         $query = $this->pdo->prepare('INSERT INTO comments SET author = :author, content = :content, article_id = :article_id, created_at = NOW()');

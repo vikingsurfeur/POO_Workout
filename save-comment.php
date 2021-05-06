@@ -5,8 +5,8 @@ require_once './libraries/utils.php';
 require_once './libraries/Models/Comment.php';
 require_once './libraries/Models/Article.php';
 
-$articleModel = new Article();
-$commentModel = new Comment();
+$articleModel = new \Models\Article();
+$commentModel = new \Models\Comment();
 
 /**
  * CE FICHIER DOIT ENREGISTRER UN NOUVEAU COMMENTAIRE EST REDIRIGER SUR L'ARTICLE !
@@ -52,7 +52,7 @@ if (!$author || !$article_id || !$content) {
     die("Votre formulaire a été mal rempli !");
 }
 
-$article = $articleModel->getArticle($article_id);
+$article = $articleModel->find($article_id);
 
 // Si rien n'est revenu, on fait une erreur
 if (!$article) {
