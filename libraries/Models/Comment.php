@@ -1,10 +1,10 @@
 <?php
 
 namespace Models;
-require_once('./libraries/Models/Model.php');
+
 class Comment extends Model
 {
-    protected $table = 'comments';
+    protected string $table = 'comments';
 
     public function getAllComments(int $article_id): array
     {
