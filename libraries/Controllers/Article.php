@@ -3,8 +3,8 @@
 namespace Controllers;
 
 use Models\Comment;
-
-require_once './libraries/utils.php';
+use Redirect;
+use Renderer;
 
 class Article extends Controller
 {
@@ -30,7 +30,7 @@ class Article extends Controller
          */
         $pageTitle = "Accueil";
 
-        render('articles/index', compact('pageTitle', 'articles'));
+        Renderer::render('articles/index', compact('pageTitle', 'articles'));
 
 
     }
@@ -85,7 +85,7 @@ class Article extends Controller
          */
         $pageTitle = $article['title'];
 
-        render('articles/show', compact('pageTitle', 'article', 'commentaires', 'article_id'));
+        Renderer::render('articles/show', compact('pageTitle', 'article', 'commentaires', 'article_id'));
     }
 
     public function delete()
@@ -122,6 +122,6 @@ class Article extends Controller
         /**
          * 5. Redirection vers la page d'accueil
          */
-        redirect('index.php');
+        Redirect::redirect('index.php');
     }
 }

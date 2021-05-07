@@ -3,7 +3,7 @@
 
 namespace Controllers;
 
-require_once './libraries/utils.php';
+use Redirect;
 
 class Comment extends Controller
 {
@@ -68,7 +68,7 @@ class Comment extends Controller
         $this->model->saveComment($author, $content, $article_id);
 
         // 4. Redirection vers l'article en question :
-        redirect("article.php?id=" . $article_id);
+        Redirect::redirect("article.php?id=" . $article_id);
     }
 
     public function delete()
@@ -107,6 +107,6 @@ class Comment extends Controller
         /**
          * 5. Redirection vers l'article en question
          */
-        redirect("article.php?id=" . $article_id);
+        Redirect::redirect("article.php?id=" . $article_id);
     }
 }
